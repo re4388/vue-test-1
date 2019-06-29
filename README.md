@@ -7,3 +7,6 @@
 4. npm run test (To run test)
 5. To lint via Eslint (Lints and auto-fixes)
 6. for configuration in details, See [Office](https://cli.vuejs.org/config/) 
+
+## Example is borrowed by
+1. https://alexjover.com/blog/write-the-first-vue-js-component-unit-test-in-jest/

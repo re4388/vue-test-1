@@ -1,21 +1,22 @@
 <template>
-  <div id="app"
-    class="container">
-    <HelloWorld message="Welcome to Vue.js App" />
-    <Foo />
+  <div id="app">
+    <MessageList :messages="messages" />
+
   </div>
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld.vue'
-  import Foo from './components/Foo.vue'
+  import MessageList from './components/MessageList.vue'
 
   export default {
     name: 'app',
+    data() {
+      return ({
+        messages: ['Ben Hu', 'Sabrina']
+      })
+    },
     components: {
-      HelloWorld,
-
-      Foo,
+      MessageList
     },
   }
 
@@ -29,11 +30,6 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 20px;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
   }
 
 </style>
