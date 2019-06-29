@@ -3,10 +3,11 @@ import {
 } from '@vue/test-utils'
 import Foo from '@/components/Foo.vue'
 
-// define a factory func that can take an object in, as arguments, and return a func we need
+// define a factory func that can take an object in, as arguments, 
+// and return a func we need
 const factory = (values = {}) => {
     return shallowMount(Foo, {
-        data: function () {
+        data() {
             return {
                 ...values
             }
@@ -20,16 +21,16 @@ describe('Foo', function () {
         expect(wrapper.find('.message').text()).toEqual('Hello World')
     })
 
-    it('renders an error when username is less than 7 characters', () => {
+    it('no error when username is >= 7 characters', () => {
         const wrapper = factory({
             username: ' '.repeat(7)
         })
         expect(wrapper.find('.error').exists).toBeTruthy()
     })
 
-    it('renders an error when username is less than 7 characters', () => {
+    it('error when username < 7 characters', () => {
         const wrapper = factory({
-            username: 'Lachlan'
+            username: '123456'
         })
         expect(wrapper.find('.error').exists).toBeTruthy()
     })
